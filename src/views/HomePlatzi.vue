@@ -1,8 +1,13 @@
 /* eslint-disable vue/multi-word-component-names */
 
 <template>
-  <div>
-    <px-assets-table :assets="assets"></px-assets-table>
+  <div class="content-center">
+    <bounce-loader
+      :loading="isLoading"
+      :color="'#68d391'"
+      :size="100"
+    ></bounce-loader>
+    <px-assets-table v-if="!isLoading" :assets="assets"></px-assets-table>
   </div>
 </template>
 
@@ -17,12 +22,17 @@ export default {
   },
   data() {
     return {
+      isLoading: true,
       assets: [],
     }
   },
 
   created() {
-    api.getAssets().then((assets) => (this.assets = assets))
+    this.isLoading = true
+    api
+      .getAssets()
+      .then((assets) => (this.assets = assets))
+      .finally(() => (this.isLoading = false))
   },
 }
 </script>

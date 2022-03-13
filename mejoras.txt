@@ -1,0 +1,5 @@
+- Mejorar el diseño con tailwind:
+    - Cambiar color
+    - Cambiar a diseño responsive
+    - Cambiar nombre del proyecto
+    - Mostrar en el footer las tecnologías utilizadas
