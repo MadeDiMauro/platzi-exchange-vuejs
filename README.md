@@ -1,5 +1,8 @@
 # platzi-exchange
 
+## Sitio en netlify
+https://platzi-exchange-maddie.netlify.app/
+
 ## Project setup
 ```
 npm install
